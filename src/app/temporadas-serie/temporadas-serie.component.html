@@ -1,1 +1,11 @@
-<p>temporadas-serie works!</p>
+<div>
+
+  <ul *ngIf="temporadas && temporadas.length >0; else bloqueSinTemporadas">
+    <li *ngFor="let temp of temporadas">{{temp}}</li>
+   
+  </ul>
+  <ng-template #bloqueSinTemporadas>
+    <p>No hay temporadas para esta serie</p>
+  </ng-template>
+  
+</div>

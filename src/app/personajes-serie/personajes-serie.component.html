@@ -1,6 +1,10 @@
 <div class="d-flex gap-2 flex-wrap listado-series container">
   <!-- Seria mejor pasar todo el objeto detalle, pero por practivar el envio de parametros lo hacemos asi.....-->
-<app-detalle-listado  *ngFor="let psj of personajes"  [imagen]="psj.imagen"  [texto]="psj.nombre_personaje" [id]="psj.id" url="/personajes">
+<app-detalle-listado  *ngFor="let psj of personajes"  
+                      [imagen]="psj.imagen"  
+                      [texto]="psj.nombre_real" 
+                      [id]="psj.id" 
+                      url="/personajes">
 </app-detalle-listado>
 
 

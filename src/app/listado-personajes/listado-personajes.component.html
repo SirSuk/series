@@ -1,1 +1,11 @@
-<p>listado-personajes works!</p>
+<div class="d-flex gap-2 flex-wrap listado-series container">
+  <!-- Seria mejor pasar todo el objeto detalle, pero por practivar el envio de parametros lo hacemos asi.....-->
+<app-detalle-listado  *ngFor="let pj of listadoPersonajes"  
+                      [imagen]="pj.imagen"  
+                      [texto]="pj.nombre_real" 
+                      [id]="pj.id" 
+                      url="/personajes">
+</app-detalle-listado>
+
+
+</div>

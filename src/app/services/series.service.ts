@@ -17,4 +17,12 @@ export class SeriesService {
   getById(id:number) {
     return SERIES.find(serie => serie.id === id)
   }
+
+  getCanales() {
+    const canales= SERIES.map(serie => serie.canal)
+    return  [...new Set(canales)]
+  }
+  getSeriesByCanal(canal:string) {
+    return SERIES.filter(serie => serie.canal.toLowerCase() === canal.toLowerCase() )
+  }
 }

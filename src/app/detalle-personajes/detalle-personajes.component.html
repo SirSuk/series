@@ -1,1 +1,31 @@
-<p>detalle-personajes works!</p>
+<div class="card my-3 px-4 container" style="max-width: 80%;" *ngIf="personaje else bloqueSinPersonaje">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="personaje.imagen" class="img-fluid rounded-start" [alt]="'Imagen del personaje' +personaje.nombre_real">
+    </div>
+       
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{personaje.nombre_real}}</h5>
+        <p class="card-text">Nombre en la serie{{personaje.nombre_personaje}}</p>
+        <p class="card-text">Episodios en los que aparece {{personaje.episodios}}</p>
+  
+        <div class="d-flex gap-2">
+
+          <app-detalle-listado [imagen]="serie.imagen" 
+                               [texto]="serie.titulo" 
+                               [id]="serie.id" 
+                               url="/serie"></app-detalle-listado>
+
+        </div>
+
+
+        <a [routerLink]="['/personajes']">Volver al listado de personajes</a>
+    
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #bloqueSinPersonaje>
+  El pj no existe
+</ng-template>
